@@ -71,59 +71,84 @@
         padding: 5px;
       }
     }
+
+    /* Ocultar contenido hasta contraseña correcta */
+    #contenido {
+      display: none;
+    }
   </style>
 </head>
 <body>
-  <h1>ADVANCED GRAMMAR</h1>
+  <div id="contenido">
+    <h1>ADVANCED GRAMMAR</h1>
 
-  <div class="tree">
-    <!-- ACTIVITIES Folder -->
-    <details>
-      <summary>ACTIVITIES</summary>
-      <ul>
-        <!-- Tenses Folder -->
-        <li>
-          <details>
-            <summary>Tenses</summary>
-            <ul>
-              <li><a href="ACTIVITIES/Tenses/Find so who-present tenses.html" target="_blank">Find so who - Present Tenses</a></li>
-              <li><a href="ACTIVITIES/Tenses/Continuous and perfect aspect.html" target="_blank">Continuous and Perfect Aspect</a></li>
-              <li><a href="ACTIVITIES/Tenses/The Voice-continuous and perfect aspect.html" target="_blank">The Voice - Continuous and Perfect Aspect</a></li>
-              <li><a href="ACTIVITIES/Tenses/Find so who-perfect aspect.html" target="_blank">Find so who - Perfect Aspect</a></li>
-            </ul>
-          </details>
-        </li>
+    <div class="tree">
+      <!-- ACTIVITIES Folder -->
+      <details>
+        <summary>ACTIVITIES</summary>
+        <ul>
+          <!-- Tenses Folder -->
+          <li>
+            <details>
+              <summary>Tenses</summary>
+              <ul>
+                <li><a href="ACTIVITIES/Tenses/Find so who-present tenses.html" target="_blank">Find so who - Present Tenses</a></li>
+                <li><a href="ACTIVITIES/Tenses/Continuous and perfect aspect.html" target="_blank">Continuous and Perfect Aspect</a></li>
+                <li><a href="ACTIVITIES/Tenses/The Voice-continuous and perfect aspect.html" target="_blank">The Voice - Continuous and Perfect Aspect</a></li>
+                <li><a href="ACTIVITIES/Tenses/Find so who-perfect aspect.html" target="_blank">Find so who - Perfect Aspect</a></li>
+              </ul>
+            </details>
+          </li>
 
-        <!-- Modal verbs Folder -->
-        <li>
-          <details>
-            <summary>Modal verbs</summary>
-            <ul>
-              <li><a href="ACTIVITIES/Modal verbs/Tourist brochure.html" target="_blank">Tourist brochure</a></li>
-              <li><a href="ACTIVITIES/Modal verbs/Fill in the gaps.html" target="_blank">Fill in the gaps</a></li>
-            </ul>
-          </details>
-        </li>
-      </ul>
-    </details>
+          <!-- Modal verbs Folder -->
+          <li>
+            <details>
+              <summary>Modal verbs</summary>
+              <ul>
+                <li><a href="ACTIVITIES/Modal verbs/Tourist brochure.html" target="_blank">Tourist brochure</a></li>
+                <li><a href="ACTIVITIES/Modal verbs/Fill in the gaps.html" target="_blank">Fill in the gaps</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </details>
 
-    <!-- COURSE PRESENTATIONS Folder -->
-    <details>
-      <summary>COURSE PRESENTATIONS</summary>
-      <ul>
-        <li><a href="COURSE PRESENTATIONS/Tenses.html" target="_blank">Tenses</a></li>
-        <li><a href="COURSE PRESENTATIONS/Modal verbs.html" target="_blank">Modal verbs</a></li>
-      </ul>
-    </details>
+      <!-- COURSE PRESENTATIONS Folder -->
+      <details>
+        <summary>COURSE PRESENTATIONS</summary>
+        <ul>
+          <li><a href="COURSE PRESENTATIONS/Tenses.html" target="_blank">Tenses</a></li>
+          <li><a href="COURSE PRESENTATIONS/Modal verbs.html" target="_blank">Modal verbs</a></li>
+        </ul>
+      </details>
 
-    <!-- ADVANCED GRAMMAR BOOK Folder -->
-    <details>
-      <summary>ADVANCED GRAMMAR BOOK</summary>
-      <ul>
-        <li><a href="ADVANCED GRAMMAR BOOK/ADVANCED GRAMMAR BOOK.html" target="_blank">ADVANCED GRAMMAR BOOK</a></li>
-      </ul>
-    </details>
+      <!-- ADVANCED GRAMMAR BOOK Folder -->
+      <details>
+        <summary>ADVANCED GRAMMAR BOOK</summary>
+        <ul>
+          <li><a href="ADVANCED GRAMMAR BOOK/ADVANCED GRAMMAR BOOK.html" target="_blank">ADVANCED GRAMMAR BOOK</a></li>
+        </ul>
+      </details>
+    </div>
   </div>
+
+  <script>
+    const contraseñaCorrecta = "English_1C1";
+
+    function pedirContraseña() {
+      let password;
+      do {
+        password = prompt("Introduce la contraseña para acceder:");
+        if(password !== contraseñaCorrecta) {
+          alert("Contraseña incorrecta. Inténtalo de nuevo.");
+        }
+      } while(password !== contraseñaCorrecta);
+      
+      // Mostrar contenido cuando la contraseña es correcta
+      document.getElementById("contenido").style.display = "block";
+    }
+
+    window.onload = pedirContraseña;
+  </script>
 </body>
 </html>
-
